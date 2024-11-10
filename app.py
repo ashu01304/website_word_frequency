@@ -48,10 +48,10 @@ def analyze():
     text = extract_text_from_webpage(url)
     
     if text:
-        common_words = get_most_common_words(text, n=20, stop_words=stop_words)
+        common_words = get_most_common_words(text, n=10, stop_words=stop_words)
         return jsonify({'words': common_words})
     else:
         return jsonify({'error': 'Failed to fetch webpage content'}), 400
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
